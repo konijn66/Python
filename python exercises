@@ -1,0 +1,97 @@
+nums=[0,2,3,7,8,10,11,14,15,16,17,20,22,23,25]
+even=[]
+odd=[]
+indexing=0
+runningSum=0
+string="hamburgers"
+vowelCounter=0
+consonantCounter=0
+word="racecar"
+tempMax=0
+
+
+def evenOdd():
+    for x in nums:
+        if x%2==0:
+            even.append(x)
+            print(x,"is even")
+        else:
+            odd.append(x) 
+            print(x,"is odd")
+
+    print("list of even numbers:", even)
+    print("list of odd numbers:", odd)
+
+def numberStatistics():
+    global runningSum, indexing
+    for x in nums:
+     runningSum+=x
+     indexing+=1
+
+    print("sum:", runningSum)    
+    print("maximum of nums:", max(nums))
+    print("minimum of nums:", min(nums))
+    print("there are", indexing ,"numbers in the list nums")
+    print("average:", runningSum/indexing)
+
+def elementFinder():
+    for x in nums:
+        if x==7:
+            print ("7 is in the dataset")
+
+def vowelConsonantCounter():
+    global string, vowelCounter, consonantCounter
+
+    for v in string:
+        print (v)
+        if v=="a"or v=="e"or v=="i"or v=="o"or v=="u":
+            vowelCounter+=1
+            print(v," is a vowel")
+        else:
+            consonantCounter+=1
+            print(v," is a consonant")
+
+    print ("vowel count:",vowelCounter)    
+    print ("consonant count:",consonantCounter)         
+
+def palindromeChecker():
+    global word
+    global reversed
+    reversed=word[::-1]
+    if(word==reversed):
+        print("The word", word,"is a palindrome")
+    else:
+        print("The word", word,"is NOT a palindrome")
+    
+def studentGradeAnalysis():
+    students = [ {"name": "Alice", "grades": [85, 90, 78]}, {"name": "Bob", "grades": [95, 82, 98]}, {"name": "Charlie", "grades": [70, 85, 92]} ]
+    for student in students:
+        print(student["grades"])
+        sum (student["grades"])
+        print (student["name"]," has an average grade of", sum (student["grades"])/3)
+
+def movieAnalysis():
+    temp = 0
+    movies = [ {"title": "The Shawshank Redemption", "genre": "Drama", "rating": 9.3}, {"title": "The Godfather", "genre": "Crime", "rating": 9.2}, {"title": "The Dark Knight", "genre": "Action", "rating": 9.0}, {"title": "Pulp Fiction", "genre": "Crime", "rating": 8.9}, {"title": "Schindler's List", "genre": "Drama", "rating": 8.9} ]
+    for movie in movies:
+        if movie["rating"]>temp:
+            temp=movie["rating"]
+            name=movie["title"]
+
+    print(name, temp)
+
+    
+
+# exercise 1: List Manipulation
+evenOdd()
+numberStatistics()
+elementFinder()
+
+# exercise 2: String Manipulation
+vowelConsonantCounter()
+palindromeChecker()
+
+#exercise 3: Data Analysis
+studentGradeAnalysis()
+movieAnalysis()
+
